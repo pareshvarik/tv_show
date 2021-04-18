@@ -1,6 +1,7 @@
 <template>
   <div class="mb-3 mt-4">
     <router-link
+      class="heading"
       :to="{
         name: 'ShowDetail',
         params: { id: show.id },
@@ -12,7 +13,7 @@
         v-if="show.image"
       />
       <div v-else class="card">
-        <h2 class="text-dark">Image Not found</h2>
+        <h2 class="text-dark">Image Not Available</h2>
       </div>
 
       <div class="mt-1" v-if="show.name">
@@ -21,7 +22,7 @@
           <span>
             <b-icon icon="star-fill" class="star-icon mx-1"></b-icon>
           </span>
-          <span class="text average" v-if="show.rating.average">
+          <span class="text show-average" v-if="show.rating.average">
             {{ show.rating.average }}
           </span>
           <span v-else class="text"> NA </span>
@@ -29,11 +30,11 @@
           <span>
             <b-icon icon="calendar3" class="mx-1 heading"></b-icon>
           </span>
-          <span class="text premiered" v-if="show.premiered">
+          <span class="text show-premiered" v-if="show.premiered">
             {{ show.premiered }}
           </span>
           <span v-else class="text"> NA </span>
-          <div class="text-white text-sm genres">
+          <div class="text-white text-sm show-genres">
             {{ show.genres.join(", ") }}
           </div>
         </div>
@@ -66,4 +67,5 @@ export default {
 .star-icon {
   color: #fffb00;
 }
+
 </style>
