@@ -1,6 +1,7 @@
 <template>
   <div class="show-detail">
     <b-row>
+      <!-- back button -->
     <div class="ml-3  backButton">
       <b-button variant="warning" class="btn-circle" @click="$router.go(-1)">
         <b-icon icon="arrow-left"></b-icon>
@@ -56,7 +57,7 @@
                 class="show-genres ml-1 text-white"
                 v-if="this.genre.length > 0"
               >
-                {{ show.genres.join() }}
+                {{ show.genres.join(', ') }}
               </span>
               <span v-else class="ml-1 text-white">NA</span>
             </div>
@@ -125,8 +126,8 @@
 </template>
 
 <script>
-import Cast from "./Cast.vue";
-import Season from "./Season.vue";
+import Cast from "../components/Cast.vue";
+import Season from "../components/Season.vue";
 import {
   getShowDetails,
   getShowCasts,
@@ -149,7 +150,7 @@ export default {
       genre: ""
     };
   },
-  created() {
+  mounted() {
     this.showDetails(this.$route.params.id);
   },
   methods: {

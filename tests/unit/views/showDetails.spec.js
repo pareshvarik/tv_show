@@ -1,7 +1,7 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import VueRouter from "vue-router";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-import ShowDetail from "@/components/ShowDetail.vue";
+import ShowDetail from "@/views/ShowDetail.vue";
 import { routes } from "@/router/index";
 
 jest.mock("axios", () => ({

@@ -1,10 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import PageNotFound from "../components/PageNotFound.vue";
-
+import PageNotFound from "../views/PageNotFound.vue";
 import Search from "../components/Search.vue";
-const ShowDetail = () => import("../components/ShowDetail.vue");
+import ShowDetail from "../views/ShowDetail.vue";
+
 
 Vue.use(VueRouter);
 

@@ -23,12 +23,6 @@ describe("ShowCard.vue", () => {
   afterEach(() => {
     cardWrapper.destroy();
   });
-  // const cardWrapper = shallowMount(ShowCard, {
-  //   propsData: {
-  //     show,
-  //   },
-  //   stubs: ["router-link"],
-  // });
   it("display show average", () => {
     expect(cardWrapper.find(".show-average").exists()).toBe(true);
     expect(cardWrapper.find(".show-average").text()).toContain(
